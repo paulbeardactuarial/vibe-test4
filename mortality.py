@@ -44,7 +44,7 @@ def _pv_scalar(gender, age, discount_rate, improvement_rate,
     if joint_type == "first_death":
         return float(np.dot(disc, tpx * tpy))
     else:  # second_death / last survivor
-        return float(np.dot(disc, tpx + tpy + tpx * tpy))
+        return float(np.dot(disc, tpx + tpy - tpx * tpy))
 
 
 def pv_annuity(gender, age, discount_rate, mortality_improvement_rate,
